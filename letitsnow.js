@@ -144,8 +144,8 @@ $(document).ready(function() {
 function snowInit() {
     for (var i = 0; i < config.flakesCount; i++) {
         var flake = {
-            x: Math.floor(Math.random() * (canvas.width - 20)) + 10,
-            y: Math.floor(Math.random() * (canvas.height - 20)) + 10,
+            x: Math.floor(Math.random() * canvas.width),
+            y: Math.floor(Math.random() * canvas.height),
             r: Math.random() * 3 + 2,
             o: randomIntFromInterval(0.1, 0.5),
             s: randomIntFromInterval(2, 5)
