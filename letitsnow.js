@@ -470,4 +470,16 @@ function UpdateCanvas() {
     window.requestAnimationFrame(UpdateCanvas);
 }
 
+function resizeCanvas() {
+    $('canvas').attr('width', $(window).width());
+    $('canvas').attr('height', $(window).height());
+    $('#MainCanvas').css("height", "100vh");
 
+    piles.forEach(pile => {
+        pile.y = $(window).height();
+    });
+}
+
+$(window).resize(function() {
+    resizeCanvas();
+});
