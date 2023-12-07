@@ -153,8 +153,8 @@ function snowInit() {
         flakes.push(flake);
 
         var backgroundFlake = {
-            x: Math.floor(Math.random() * (canvas.width - 20)) + 10,
-            y: Math.floor(Math.random() * (canvas.height - 20)) + 10,
+            x: Math.floor(Math.random() * canvas.width),
+            y: Math.floor(Math.random() * canvas.height),
             r: Math.random() * 3 + 2,
             o: randomIntFromInterval(0.1, 0.5),
             s: randomIntFromInterval(2, 5),
@@ -164,7 +164,7 @@ function snowInit() {
 
         if (config.quickStart) {
             piles.push({
-                x: Math.floor(Math.random() * (canvas.width - 20)) + 10,
+                x: Math.floor(Math.random() * canvas.width),
                 y: canvas.height,
                 r: Math.random() * 100
             });
@@ -293,7 +293,7 @@ function UpdateCanvas() {
                 mouseClicked = false;
             }
 
-            // Snowball is being dragged - update it's x and y coords in line with the mouse's coordinates
+            // Snowball is being dragged - update its x and y coords in line with the mouse's coordinates
             snowball.x = mouse.x;
             snowball.y = mouse.y;
             snowball.t = new Date();
